@@ -4,7 +4,7 @@
             <div style="text-align: center;">
                 <strong>Bravo!</strong>
                 <br>
-                Imaš {{right}} od {{count}} točnih odgovora.
+                Imaš {{right}} od {{count}} točnih odgovora!
             </div>
         </div>
     </div>  
