@@ -1,0 +1,77 @@
+[
+    {
+        "question": "Izbaci uljeza!",
+        "answers": [
+            {
+                "text": "Itaka",
+                "letter": "A",
+                "true": true
+            },
+            {
+                "text": "Penelopa",
+                "letter": "B",
+                "true": false
+            },
+            {
+                "text": "Atena",
+                "letter": "C",
+                "true": false
+            },
+            {
+                "text": "Ismena",
+                "letter": "D",
+                "true": false
+            }
+        ]
+    },
+    {
+        "question": "Koji like nije iz djela \"Elektra\"?",
+        "answers": [
+            {
+                "text": "Egist",
+                "letter": "A",
+                "true": false
+            },
+            {
+                "text": "Agamemnon",
+                "letter": "B",
+                "true": false
+            },
+            {
+                "text": "Kasandra",
+                "letter": "C",
+                "true": false
+            },
+            {
+                "text": "Tiresija",
+                "letter": "D",
+                "true": true
+            }
+        ]
+    },
+    {
+        "question": "Tko je napisao Ilijadu?",
+        "answers": [
+            {
+                "text": "Homer",
+                "letter": "A",
+                "true": true
+            },
+            {
+                "text": "Sofoklo",
+                "letter": "B",
+                "true": false
+            },
+            {
+                "text": "Edip",
+                "letter": "C",
+                "true": false
+            },
+            {
+                "text": "Kant",
+                "letter": "D",
+                "true": false
+            }
+        ]
+    }
+]

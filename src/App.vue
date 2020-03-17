@@ -1,28 +1,78 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<section class="hero is-primary" style="margin-top: 1rem;">
+			<div class="hero-body">
+				<div class="container">
+				<h1 class="title">
+					Grčka književnost
+				</h1>
+				<h2 class="subtitle">
+					Martin Bakač, 2020.
+				</h2>
+				</div>
+			</div>
+		</section>
+		<Question v-bind:question="questions[questionNumber]" v-bind:number="questionNumber" v-on:answered="checkAnswer"/>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+	import Question from "./components/Question"
+	import Modal from "./components/Modal"
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import questions from "./assets/questions.json"
+
+	export default {
+		name: 'App',
+		components: {
+			Question,
+		},
+		methods: {
+			nextQuestion() {
+				this.questionNumber++
+				if (this.questionNumber === this.questionCount) {
+					this.$buefy.modal.open({
+						component: Modal,
+						props: {
+							"right": this.rightAnswers, 
+							"count": this.questionCount
+						}
+					})
+					this.questionNumber = 0
+					this.rightAnswers = 0
+				}
+			},
+			rightAnswer() {
+				this.rightAnswers++
+			},
+			checkAnswer(answer) {
+				if (answer) {
+					this.rightAnswer()
+					this.$buefy.toast.open({
+						duration: 1000,
+						message: "Točno!",
+						position: "is-bottom",
+						type: "is-success"
+					})
+				} else {
+					this.$buefy.toast.open({
+						duration: 1000,
+						message: "Netočno!",
+						position: "is-bottom",
+						type: "is-danger"
+					})
+				}
+
+				this.nextQuestion()
+			}
+		},
+		data () {
+			return {
+				"questionNumber": 0,
+				"rightAnswers": 0,
+				"questions": questions,
+				"questionCount": questions.length
+			}
+		}
+	}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
