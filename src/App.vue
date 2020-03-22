@@ -18,7 +18,7 @@
 
 <script>
 	import Question from "./components/Question"
-	import Modal from "./components/Modal"
+	import ResultsModal from "./components/ResultsModal"
 
 	import questions from "./assets/questions.json"
 
@@ -32,7 +32,7 @@
 				this.questionNumber++
 				if (this.questionNumber === this.questionCount) {
 					this.$buefy.modal.open({
-						component: Modal,
+						component: ResultsModal,
 						props: {
 							"right": this.rightAnswers, 
 							"count": this.questionCount

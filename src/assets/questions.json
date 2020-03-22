@@ -22,7 +22,13 @@
                 "letter": "D",
                 "true": false
             }
-        ]
+        ],
+        "type": "multiple-choice"
+    },
+    {
+        "question": "Tko je iskovao Odisejov štit?",
+        "answer": "Hefest",
+        "type": "text-field"
     },
     {
         "question": "Koji like nije iz djela \"Elektra\"?",
@@ -47,7 +53,8 @@
                 "letter": "D",
                 "true": true
             }
-        ]
+        ],
+        "type": "multiple-choice"
     },
     {
         "question": "Tko je napisao Ilijadu?",
@@ -72,6 +79,7 @@
                 "letter": "D",
                 "true": false
             }
-        ]
+        ],
+        "type": "multiple-choice"
     }
 ]
