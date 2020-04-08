@@ -52,7 +52,6 @@
                 this.$emit("answered", answer)
             },
             onSubmitTextFile () {
-                console.log(this.value)
                 this.$emit("answered", this.value === this.question.answer ? true : false)
             },
         },

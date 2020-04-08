@@ -1,29 +1,17 @@
 <template>
-	<div id="app">
-		<section class="hero is-primary" style="margin-top: 1rem;">
-			<div class="hero-body">
-				<div class="container">
-				<h1 class="title">
-					Grčka književnost
-				</h1>
-				<h2 class="subtitle">
-					Martin Bakač, 2020.
-				</h2>
-				</div>
-			</div>
-		</section>
+	<div>
 		<Question v-bind:question="questions[questionNumber]" v-bind:number="questionNumber" v-on:answered="checkAnswer"/>
 	</div>
 </template>
 
 <script>
-	import Question from "./components/Question"
-	import ResultsModal from "./components/ResultsModal"
+	import Question from "../components/Question"
+	import ResultsModal from "../components/ResultsModal"
 
-	import questions from "./assets/questions.json"
+	import questions from "../assets/questions.json"
 
 	export default {
-		name: 'App',
+		name: 'Quiz',
 		components: {
 			Question,
 		},
@@ -34,12 +22,14 @@
 					this.$buefy.modal.open({
 						component: ResultsModal,
 						props: {
-							"right": this.rightAnswers, 
+							"right": this.rightAnswers,
 							"count": this.questionCount
-						}
+						},
 					})
 					this.questionNumber = 0
-					this.rightAnswers = 0
+                    this.rightAnswers = 0
+                    
+                    this.$router.push("/")
 				}
 			},
 			rightAnswer() {
