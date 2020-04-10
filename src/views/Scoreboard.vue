@@ -22,7 +22,18 @@
         created: function () {
             fetch("https://safe-dusk-39986.herokuapp.com/quiz")
                 .then(data => data.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    data = data.sort((a, b) => (a.value >= b.value) ? -1 : 1)
+
+                    data = data.map((item, index) => ({
+                        rank: index + 1,
+                        nickname: item.key,
+                        points: item.value,
+                        date: new Date(item.date).toLocaleString("hr-HR")
+                    }))
+
+                    this.data = data
+                })
         },
         data() {
             return {
@@ -31,8 +42,8 @@
                     {
                         field: 'rank',
                         label: 'Mjesto',
-                        width: '40',
-                        numeric: true
+                        numeric: true,
+                        centered: true,
                     },
                     {
                         field: 'nickname',
@@ -42,6 +53,7 @@
                     {
                         field: 'points',
                         label: 'Bodovi',
+                        centered: true,
                     },
                     {
                         field: 'date',

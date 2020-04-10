@@ -49,21 +49,21 @@
                 this.nickname = this.nickname.toUpperCase()
             },
             uploadScore() {
-                fetch("https://safe-dusk-39986.herokuapp.com/", {
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json",
-                    },
-                    mode: "cors",
-
-                    body: JSON.stringify(
-                        {
-                            "nickname": this.nickname,
-                            "points": this.right,
-                            "compartment": "quiz"
-                        }
-                    )
-                })
+                if (this.nickname !== "") {
+                    fetch("https://safe-dusk-39986.herokuapp.com/", {
+                        method: "POST",
+                        headers: {
+                            "Content-type": "application/json",
+                        },
+                        body: JSON.stringify(
+                            {
+                                "key": this.nickname,
+                                "value": this.right,
+                                "compartment": "quiz"
+                            }
+                        )
+                    })
+                }
             }
         },
         data() {
