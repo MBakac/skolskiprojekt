@@ -31,7 +31,7 @@
                 <div class="container">
                     <div>
                         <b-field label="Tvoj odgovor" label-position="inside" grouped>
-                            <b-input v-model="value"/>
+                            <b-input v-model="value" autocomplete="off"/>
                             <p class="control">
                                 <b-button @click="onSubmitTextFile()">Odgovori</b-button>
                             </p>
@@ -53,6 +53,7 @@
             },
             onSubmitTextFile () {
                 this.$emit("answered", this.value === this.question.answer ? true : false)
+                this.value = ""
             },
         },
         data () {

@@ -26,7 +26,7 @@
                     data = data.sort((a, b) => (a.value >= b.value) ? -1 : 1)
 
                     data = data.map((item, index) => ({
-                        rank: index + 1,
+                        rank: `${index + 1}.`,
                         nickname: item.key,
                         points: item.value,
                         date: new Date(item.date).toLocaleString("hr-HR")
