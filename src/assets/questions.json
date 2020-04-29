@@ -81,5 +81,10 @@
             }
         ],
         "type": "multiple-choice"
+    },
+    {
+        "question": "Broj žena Slavoja Žižeka - broj žena Immanuela Kanta",
+        "answer": "4",
+        "type": "text-field"
     }
 ]
