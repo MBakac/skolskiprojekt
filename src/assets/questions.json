@@ -83,7 +83,7 @@
         "type": "multiple-choice"
     },
     {
-        "question": "BONUS PITANJE: Kolika je razlika između broja žena Slavoja Žižeka i broja žena Immanuela Kanta",
+        "question": "BONUS PITANJE: Kolika je razlika broja žena Slavoja Žižeka i broja žena Immanuela Kanta",
         "answer": "4",
         "type": "text-field"
     }
